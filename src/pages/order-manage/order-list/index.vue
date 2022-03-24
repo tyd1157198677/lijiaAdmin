@@ -47,9 +47,16 @@
             <el-table-column prop="estimatedCost" label="订单金额" width="100" align="center"></el-table-column>
             <el-table-column prop="cost" label="实际收款" width="100" align="center"></el-table-column>
             <el-table-column label="优惠券" prop="coupons" min-width="100px" align="center">
-                <!-- <template slot-scope="scope">
-                    <div v-for="item in scope.row.coupons" :key="item">{{item}}</div>
-                </template>-->
+                <template slot-scope="scope">
+                    <span v-if="!scope.row.coupons"></span>
+                    <span
+                        v-else-if="scope.row.coupons&&scope.row.coupons.length==1"
+                    >{{scope.row.coupons[0]}}</span>
+                    <el-popover v-else placement="right" width="80" trigger="hover">
+                        <div v-for="item in scope.row.coupons" :key="item">{{item}}</div>
+                        <span class="btnTab" slot="reference">更多优惠券</span>
+                    </el-popover>
+                </template>
             </el-table-column>
             <el-table-column
                 prop="address"
@@ -206,6 +213,7 @@ export default {
                 data.lst.forEach((e) => {
                     e.expectedServiceTime = parseTime(e.expectedServiceTime)
                     e.serviceTime = parseTime(e.serviceTime)
+                    e.coupons = e.coupons ? e.coupons.split(',') : ''
                     e.status =
                         e.status === 0
                             ? '未服务'
@@ -237,6 +245,7 @@ export default {
         },
         handleClick(i) {
             this.order = i
+            this.formInline.pn = 1
             this.getOrders()
         },
         pageAChange(page) {

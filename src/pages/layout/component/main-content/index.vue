@@ -1,13 +1,11 @@
 <template>
     <div class="main-container">
-        <TopAside/>
-        <Content/>
+        <TopAside />
+        <Content />
     </div>
 </template>
 
 <script>
-import TopAside from './top-aside'
-import Content from './content'
 import { mapState } from 'vuex'
 
 export default {
@@ -15,11 +13,11 @@ export default {
         return {}
     },
     computed: {
-        ...mapState(['isSidebarNavCollapse'])
+        ...mapState(['isSidebarNavCollapse']),
     },
     components: {
-        TopAside,
-        Content
-    }
+        TopAside: () => import('./top-aside'),
+        Content: () => import('./content'),
+    },
 }
 </script>

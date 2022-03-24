@@ -1,6 +1,11 @@
 <!--  -->
 <template>
-    <el-dialog title="设置失效订单" :visible.sync="dialogFormVisible" width="65%">
+    <el-dialog
+        title="设置失效订单"
+        :visible.sync="dialogFormVisible"
+        width="65%"
+        :close-on-click-modal="false"
+    >
         <el-form :model="form" label-position="left" size="small" :rules="rules" ref="ruleForm">
             <el-form-item label="备注" prop="remark">
                 <el-input v-model="form.remark" type="textarea" placeholder="请输入备注信息"></el-input>

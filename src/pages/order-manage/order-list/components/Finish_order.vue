@@ -1,6 +1,11 @@
 <!--  -->
 <template>
-    <el-dialog title="确认完成" :visible.sync="dialogFormVisible" width="60%">
+    <el-dialog
+        title="确认完成"
+        :visible.sync="dialogFormVisible"
+        width="60%"
+        :close-on-click-modal="false"
+    >
         <el-form :model="form" label-position="left" size="small" :rules="rules" ref="ruleForm">
             <el-form-item label="实际收款" prop="cost">
                 <el-input v-model.number="form.cost" placeholder="请输入实际收款"></el-input>

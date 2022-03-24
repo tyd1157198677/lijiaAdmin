@@ -1,22 +1,18 @@
 <template>
     <div>
         <router-view></router-view>
-        <TotalStatus/>
+        <TotalStatus />
     </div>
 </template>
 
 <script>
-import TotalStatus from './component/total-status'
-
 export default {
     data() {
         return {}
     },
-    mounted() {
-
-    },
+    mounted() {},
     components: {
-        TotalStatus
-    }
+        TotalStatus: () => import('./component/total-status'),
+    },
 }
 </script>

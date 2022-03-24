@@ -1,6 +1,11 @@
 <!--  -->
 <template>
-    <el-dialog title="创建订单" :visible.sync="dialogFormVisible" width="65%">
+    <el-dialog
+        title="创建订单"
+        :visible.sync="dialogFormVisible"
+        width="65%"
+        :close-on-click-modal="false"
+    >
         <el-form
             :model="form"
             label-position="top"
@@ -73,8 +78,8 @@
             </el-row>
         </el-form>
         <div slot="footer" class="dialog-footer">
-            <el-button @click="reset">取 消</el-button>
-            <el-button type="primary" @click="submitForm('ruleForm')">确 定</el-button>
+            <el-button @click="reset" size="mini">取 消</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')" size="mini">确 定</el-button>
         </div>
     </el-dialog>
 </template>

@@ -1,32 +1,5 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@tyd1157198677 
-tyd1157198677
-/
-zhongnan-pc
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-zhongnan-pc/src/components/Pagination.vue
-@tyd1157198677
-tyd1157198677 first
-Latest commit 6ef0efa 3 days ago
- History
- 1 contributor
-95 lines (93 sloc)  1.86 KB
-   
+
+ <!-- 分页组件-->
 <template>
     <div class="pagination">
         <span></span>
