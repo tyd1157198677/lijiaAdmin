@@ -174,7 +174,6 @@ export default {
                         })
                         .catch(() => {})
                 }
-                // this.$refs.finishOrder.open(row)
             } else if (i == 3) {
                 this.$refs.finishOrder.open(row)
             } else if (i == 4) {
