@@ -123,7 +123,7 @@ export default {
             let obj = {
                 mobile: this.formInline.mobile,
                 pn: this.formInline.pn, //页码
-                ps: this.formInline.ps,
+                ps: this.formInline.ps, //每页数据
                 status:
                     this.order === 0
                         ? ''
