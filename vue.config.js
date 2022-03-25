@@ -23,7 +23,7 @@ let dllPublishPath = './vendor'
 module.exports = {
     publicPath: publicPath,
     outputDir: 'dist',
-
+    assetsDir: 'static',
     // 放置静态资源的地方 (js/css/img/font/...)
     // assetsDir: '',
 
